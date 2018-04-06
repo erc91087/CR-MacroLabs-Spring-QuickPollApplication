@@ -25,7 +25,7 @@ public class Option {
         this.id = id;
     }
 
-    public String getValue() {
+    private String getValue() {
         return value;
     }
 
