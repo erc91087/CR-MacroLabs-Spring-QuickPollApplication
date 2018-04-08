@@ -15,7 +15,7 @@
     </parent>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>io.zipcoder.tc_spring_poll_application.QuickPollApplication</start-class>
+        <start-class>io.zipcoder.springdemo.QuickPollApplication</start-class>
         <java.version>1.7</java.version>
     </properties>
     <dependencies>
@@ -47,3 +47,4 @@
 
 
 </project>
+

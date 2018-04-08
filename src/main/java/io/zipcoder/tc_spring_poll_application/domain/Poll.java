@@ -1,6 +1,9 @@
 package io.zipcoder.tc_spring_poll_application.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -8,23 +11,25 @@ public class Poll {
 
     @Id
     @GeneratedValue
-    @Column(name = "POLL_ID")
-    private Long id;
+    @Column (name = "POLL_ID")
+    private long id;
 
-    @Column(name = "QUESTION")
+    @Column (name = "QUESTION")
+    @NotEmpty
     private String question;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "POLL_ID")
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name = "POLL_ID")
     @OrderBy
+    @Size (min = 2, max = 6)
     private Set<Option> options;
 
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -36,7 +41,7 @@ public class Poll {
         this.question = question;
     }
 
-    public Set<Option> getOptions() {
+    public Set getOptions() {
         return options;
     }
 
